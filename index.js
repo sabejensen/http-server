@@ -10,14 +10,12 @@ class Bear {
     }
 };
 
-const sampleBear = new Bear('Polar', '2000lb', 'very sharp teeth');
+const sampleBear = new Bear('Polar bear', '2000lb', 'very sharp teeth');
 
 const app = express();
 
 app.use('/api', (req, res, next) => {
-    res.send('<p>This bear type is: </p>' + sampleBear.type + '<br><br>'
-    + '<p>It weighs: </p>' + sampleBear.weight + '<br><br>' +
-    '<p>This bear has: </p>' + sampleBear.teeth);
+    res.send(sampleBear);
 });
 
 app.use('/', (req, res, next) => {
